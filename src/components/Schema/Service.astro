@@ -1,0 +1,6 @@
+---
+import { Service as ServiceLD } from '../../lib/structuredData';
+const { name, description, provider } = Astro.props;
+const json = ServiceLD({ name, description, provider });
+---
+<script type="application/ld+json">{JSON.stringify(json)}</script>

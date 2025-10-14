@@ -1,0 +1,109 @@
+---
+import Layout from '../../../components/Layout.astro';
+
+const jsonLd = [{
+  '@context':'https://schema.org',
+  '@type':'ItemList',
+  name:'Cities we serve in Anne Arundel County',
+  itemListElement:[
+    { '@type':'ListItem', position:1, name:'Annapolis', url:'/service-areas/anne-arundel/annapolis' },
+    { '@type':'ListItem', position:2, name:'Severna Park', url:'/service-areas/anne-arundel/severna-park' },
+    { '@type':'ListItem', position:3, name:'Glen Burnie', url:'/service-areas/anne-arundel/glen-burnie' },
+  ],
+}];
+
+const quickStats = [
+  { label: 'Avg. Days to Lease', value: '—' },
+  { label: 'Avg. Rent (3BR)', value: '—' },
+  { label: 'Vacancy Rate', value: '—' },
+];
+---
+<Layout title="Annapolis Property Management"
+        description="Local property management for Annapolis, MD."
+        {jsonLd}>
+
+  <h1 class="text-2xl font-bold mb-4">Annapolis, MD</h1>
+  <p class="mb-6"><strong>Quick answer:</strong> Local expertise for Annapolis rentals—fast leasing, careful screening, and proactive maintenance.</p>
+
+  <section class="mb-10">
+    <h2 class="text-xl font-semibold mb-3">Popular Services</h2>
+    <ul class="list-disc pl-5">
+      <li>Full-service property management</li>
+      <li>Lease-only / tenant placement</li>
+      <li>Rental market analysis</li>
+    </ul>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-xl font-semibold mb-3">At-a-Glance</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {quickStats.map((s) => (
+        <div class="p-4 rounded-lg border">
+          <div class="text-sm text-gray-500">{s.label}</div>
+          <div class="text-2xl font-bold">{s.value}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-xl font-semibold mb-3">Get Started</h2>
+    <p>Have a property in Annapolis? We’ll price it right and manage the day-to-day.</p>
+    <a href="/services/property-management" class="inline-block mt-3 px-4 py-2 rounded-md bg-black text-white">See Property Management</a>
+  </section>
+</Layout>
+
+<!-- Local Spots (live from Worker KV) -->
+<section class="mb-10">
+  <h2 class="text-xl font-semibold mb-3">Local Spots</h2>
+  <div id="spots" class="grid gap-3 sm:grid-cols-2"></div>
+</section>
+
+<script>
+  (async () => {
+    // Dev: hitting local worker; later, switch to your deployed Worker URL or a relative path if routed behind your domain.
+    const API = 'https://roost-data.nick-morgan.workers.dev/data/local-spots/annapolis';
+    try {
+      const res = await fetch(API);
+      const data = await res.json();
+      const el = document.getElementById('spots');
+      if (!Array.isArray(data?.spots) || !el) return;
+      el.innerHTML = data.spots.map(s => `
+        <div class="p-4 rounded-lg border">
+          <div class="font-semibold">${s.name}</div>
+          <div class="text-sm text-gray-600">${s.type || ''}</div>
+          ${s.rating ? `<div class="text-sm">Rating: ${s.rating}</div>` : ''}
+        </div>
+      `).join('');
+    } catch (e) {
+      console.error('Local spots fetch failed', e);
+    }
+  })();
+</script>
+
+<!-- Local Spots (live from Worker KV) -->
+<section class="mb-10">
+  <h2 class="text-xl font-semibold mb-3">Local Spots</h2>
+  <div id="spots" class="grid gap-3 sm:grid-cols-2"></div>
+</section>
+
+<script>
+  (async () => {
+    const API = 'https://roost-data.nick-morgan.workers.dev/data/local-spots/annapolis';
+    try {
+      const res = await fetch(API);
+      const data = await res.json();
+      const el = document.getElementById('spots');
+      if (!Array.isArray(data?.spots) || !el) return;
+      el.innerHTML = data.spots.map(s => `
+        <div class="p-4 rounded-lg border">
+          <div class="font-semibold">${s.name}</div>
+          <div class="text-sm text-gray-600">${s.type || ''}</div>
+          ${s.rating ? `<div class="text-sm">Rating: ${s.rating}</div>` : ''}
+        </div>
+      `).join('');
+    } catch (e) {
+      console.error('Local spots fetch failed', e);
+    }
+  })();
+</script>

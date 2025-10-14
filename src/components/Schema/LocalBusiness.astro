@@ -1,0 +1,6 @@
+---
+import { LocalBusiness } from '../../lib/structuredData';
+const { data } = Astro.props;
+const json = LocalBusiness(data);
+---
+<script type="application/ld+json">{JSON.stringify(json)}</script>

@@ -1,0 +1,16 @@
+name = "roost-data"
+main = "src/index.ts"
+compatibility_date = "2025-10-14"
+
+[vars]
+# Comma-separated list of cities you want auto-refreshed nightly
+CITIES = "annapolis,severna-park,glen-burnie"
+
+[[kv_namespaces]]
+binding = "ROOST_LOCAL_GRAPH"
+id = "7928917f61bd44508e6049ea20438347"
+preview_id = "63e69e00cf62438e8b7c3ba489a69192"
+
+[triggers]
+# Nightly at 03:00 UTC
+crons = ["0 3 * * *"]

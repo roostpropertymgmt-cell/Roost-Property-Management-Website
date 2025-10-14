@@ -1,0 +1,6 @@
+---
+import { FAQPage as FAQ } from '../../lib/structuredData';
+const { faqs = [] } = Astro.props;
+const json = FAQ(faqs);
+---
+<script type="application/ld+json">{JSON.stringify(json)}</script>
