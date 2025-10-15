@@ -51,3 +51,32 @@ High-impact search and experience upgrades across the site:
 - Polish /services/property-management/ hero + CTAs.
 - Preconnect GA, font loading optimizations, image width/height audit.
 - County-level ItemList JSON-LD and hub pages for all counties.
+
+## Known Issues & Follow-ups
+1) Nearby Areas SSR verification pending
+   - Symptom: `curl` checks returned `0`.
+   - Mitigation shipped: SSR middleware injects the section server-side (no JS needed).
+   - Verify:
+     - `curl -sL https://roost-property-management-website.pages.dev/service-areas/anne-arundel/severna-park/ | grep -o 'id="nearby-areas"' | wc -l` → expect `1`
+     - `curl -sL https://roost-property-management-website.pages.dev/service-areas/howard/columbia/ | grep -o 'id="nearby-areas"' | wc -l` → expect `1`
+   - Owner: dev
+   - Status: PENDING PROD CONFIRMATION
+
+2) Router collision cleanup
+   - Symptom: Duplicate route warning for Annapolis (`annapolis.astro` vs `annapolis/index.astro`).
+   - Mitigation: Renamed stray file with leading underscore; confirm no warnings on next build.
+   - Verify: `npm run build` shows no route collision warnings.
+   - Owner: dev
+   - Status: VERIFY NEXT BUILD
+
+3) Cache/verification flakiness on meta tags
+   - Symptom: `twitter:card` check sometimes `0` via `curl`.
+   - Mitigation: Added no-store cache headers for HTML in middleware; use cache-buster in `bin/verify.sh`.
+   - Verify: `bin/verify.sh` shows `COL_TW:1`.
+   - Owner: dev
+   - Status: MONITOR
+
+4) Follow-ups (not blockers)
+   - Howard County expansion (Ellicott City, Elkridge).
+   - `/services/property-management/` hero + CTAs polish.
+   - Perf: preconnect GA, font loading, image dims audit.
