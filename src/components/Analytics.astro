@@ -1,0 +1,23 @@
+---
+/**
+ * GA4 loader for production builds only.
+ * Measurement ID: G-EBMBTFSNVT
+ */
+const GA4_ID = "G-EBMBTFSNVT";
+---
+{import.meta.env.PROD && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+    <script
+      is:inline
+    >{`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', '${GA4_ID}', {
+        anonymize_ip: true,
+        send_page_view: true
+      });
+    `}</script>
+  </>
+)}

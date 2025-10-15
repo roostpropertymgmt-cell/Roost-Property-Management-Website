@@ -1,35 +1,45 @@
 ---
-import '../styles/tailwind.css';
-const { title = 'Roost Property Management', description = 'Property management in Anne Arundel County & surrounding areas.', jsonLd = [] } = Astro.props;
+/* src/components/Layout.astro */
+const {
+  title = 'Roost Property Management',
+  description = 'Property management in Anne Arundel County and surrounding Maryland areas.',
+  url,            // optional absolute URL
+  image = '/og-default.jpg'
+} = Astro.props;
+
+const canonical =
+  typeof url === 'string' && url
+    ? url
+    : `https://roost-property-management-website.pages.dev${Astro.url.pathname}`;
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
-    {jsonLd.map((block) => (
-      <script type="application/ld+json">{JSON.stringify(block)}</script>
-    ))}
-    <style is:global>
-      :root { --brand:#0c6; }
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; }
-      header, footer { padding: 1rem 1.25rem; border-bottom: 1px solid #eee; }
-      main { padding: 1.25rem; max-width: 960px; margin: 0 auto; }
-      a { color: var(--brand); text-decoration: none; }
-      nav { float:right; display:inline-flex; gap:1rem; }
-    </style>
+
+    <!-- canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Tailwind (as you had it) -->
+    <link rel="stylesheet" href="/src/styles/tailwind.css" />
   </head>
-  <body>
-    <header>
-      <strong>Roost Property Management</strong>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/services/property-management">Services</a>
-        <a href="/service-areas/anne-arundel/annapolis">Annapolis</a>
-      </nav>
-    </header>
-    <main><slot /></main>
-    <footer>© {new Date().getFullYear()} Roost Property Management · (410) 555-1212</footer>
+  <body class="min-h-screen bg-white text-slate-900">
+    <slot />
   </body>
 </html>

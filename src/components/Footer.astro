@@ -1,0 +1,26 @@
+---
+const phone = "301-910-7407";
+const email = "roostpropertymgmt@gmail.com";
+const address = "110 Weldon Rd, Greenland Beach, MD 21226";
+const hours = "Mon–Sun 8:00 AM – 8:00 PM";
+const ownerPortal = "https://roostpm.rentvine.com/portals/owner/properties";
+const tenantPortal = "https://roostpm.rentvine.com/portals/resident/summary";
+const facebook = "https://www.facebook.com/profile.php?id=61561186661549";
+---
+<footer aria-label="Site Footer" style="margin-top:3rem; padding:1.5rem; border-top:1px solid #e5e7eb; font-size:.95rem;">
+  <div style="display:grid; gap:1rem;">
+    <div>
+      <strong>Roost Property Management</strong><br/>
+      <a href="tel:+13019107407" rel="nofollow">{phone}</a> ·
+      <a href="mailto:{email}" rel="nofollow">{email}</a><br/>
+      <span>{address}</span><br/>
+      <span>{hours}</span>
+    </div>
+    <nav aria-label="Portals" style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href={ownerPortal} target="_blank" rel="noopener">Owner Portal</a>
+      <a href={tenantPortal} target="_blank" rel="noopener">Tenant Portal</a>
+      <a href={facebook} target="_blank" rel="noopener">Facebook</a>
+    </nav>
+    <small style="color:#6b7280;">We operate in accordance with all applicable Fair Housing laws.</small>
+  </div>
+</footer>

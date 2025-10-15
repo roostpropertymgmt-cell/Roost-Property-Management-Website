@@ -1,0 +1,62 @@
+---
+/**
+ * Global Organization/LocalBusiness JSON-LD for Roost Property Management
+ * Uses real data you provided. No placeholders.
+ */
+const data = {
+  "@context": "https://schema.org",
+  "@type": ["Organization","LocalBusiness"],
+  "name": "Roost Property Management",
+  "url": "https://roost-properties.com",
+  "email": "mailto:roostpropertymgmt@gmail.com",
+  "telephone": "+1-301-910-7407",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": "+1-301-910-7407",
+    "email": "roostpropertymgmt@gmail.com",
+    "availableLanguage": ["English"]
+  }],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "110 Weldon Rd",
+    "addressLocality": "Greenland Beach",
+    "addressRegion": "MD",
+    "postalCode": "21226",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61561186661549",
+    "https://roostpm.rentvine.com/portals/owner/properties",
+    "https://roostpm.rentvine.com/portals/resident/summary"
+  ],
+  "knowsAbout": [
+    "Property management",
+    "Rentvine",
+    "Second Nature",
+    "zInspector"
+  ],
+  "areaServed": [
+    "Anne Arundel County, Maryland",
+    "Severna Park, Maryland",
+    "Glen Burnie, Maryland",
+    "Pasadena, Maryland",
+    "Annapolis, Maryland",
+    "Millersville, Maryland",
+    "Odenton, Maryland",
+    "Howard County, Maryland",
+    "Prince George’s County, Maryland"
+  ]
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(data)}></script>

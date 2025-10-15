@@ -1,0 +1,105 @@
+---
+import Analytics from "/src/components/Analytics.astro";
+import FairHousing from "/src/components/FairHousing.astro";
+import Footer from "/src/components/Footer.astro";
+
+const title = "Property Management in Severna Park, MD | Roost Property Management";
+const description = "Full-service property management in Severna Park, MD. Transparent pricing, fast leasing, diligent maintenance, and owner-first communication.";
+
+const faqs = [
+  { q: "What services do you provide for Severna Park landlords?", a: "Leasing, tenant screening, rent collection, maintenance coordination, inspections, and detailed owner reporting—including 24/7 owner portal access." },
+  { q: "How fast can you lease a typical Severna Park rental?", a: "Most well-priced, move-in-ready homes lease in 14–28 days, depending on seasonality and condition." },
+  { q: "How do you screen tenants?", a: "Credit, criminal, eviction, income, rental history, and identity verification—applied consistently to all applicants under our documented criteria." },
+  { q: "What are your management fees?", a: "Simple, transparent pricing—no junk fees. Request our current pricing and services sheet for an exact quote." },
+  { q: "Do you handle maintenance?", a: "Yes. We coordinate trusted vendors, get approvals per your thresholds, and document everything with timestamps and invoices." },
+  { q: "Can I see reports and statements online?", a: "Yes. Your owner portal provides real-time ledgers, documents, and tax-time statements." }
+];
+
+const quickAnswers = [
+  ["Do you cover all of Severna Park (Chartwell, Chartridge, Berrywood, Round Bay)?", "Yes—single-family homes, townhomes, and condos across Severna Park, including Chartwell, Chartridge, Berrywood, and Round Bay."],
+  ["How fast do you typically lease a well-prepared Severna Park home?", "Most lease in 14–28 days when priced to market and show-ready; seasonality and condition still matter."],
+  ["Do you help with Anne Arundel County rental requirements?", "Yes—we guide owners through any required registrations, inspections, and compliance steps in Anne Arundel County."]
+];
+
+// JSON-LD (FAQPage for main FAQs)
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a }
+  }))
+};
+
+// JSON-LD (FAQPage for Quick Answers only)
+const quickFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": quickAnswers.map(([q, a]) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a }
+  }))
+};
+
+// Breadcrumbs
+const breadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+    { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "/service-areas/" },
+    { "@type": "ListItem", "position": 3, "name": "Anne Arundel County", "item": "/service-areas/anne-arundel/" },
+    { "@type": "ListItem", "position": 4, "name": "Severna Park" }
+  ]
+};
+import Header from "/src/components/Header.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <script type="application/ld+json" set:html={JSON.stringify(quickFaqJsonLd)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
+    <Analytics />
+  </head>
+  <body>
+    <Header />
+<main>
+      <section class="container">
+        <h1>Severna Park Property Management</h1>
+        <p>{description}</p>
+
+        <!-- Quick Answers (single block) -->
+        <section aria-label="Quick Answers" style="margin:1.25rem 0; padding:1rem; border:1px solid #e5e7eb; border-radius:0.75rem;">
+          <h2 style="margin:0 0 .5rem 0; font-size:1.125rem;">Quick Answers</h2>
+          <dl>
+            {quickAnswers.map(([q,a]) => (
+              <div>
+                <dt><strong>{q}</strong></dt>
+                <dd>{a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <h2>Frequently Asked Questions</h2>
+        <dl>
+          {faqs.map(({ q, a }) => (
+            <div>
+              <dt><strong>{q}</strong></dt>
+              <dd>{a}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <FairHousing />
+      <Footer />
+    </main>
+  </body>
+</html>

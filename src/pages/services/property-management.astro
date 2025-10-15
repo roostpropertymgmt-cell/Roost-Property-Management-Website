@@ -1,56 +1,43 @@
 ---
-import Layout from '../../components/Layout.astro';
-import ServiceLD from '../../components/Schema/Service.astro';
+import Analytics from "/src/components/Analytics.astro";
+import FairHousing from "/src/components/FairHousing.astro";
+import Footer from "/src/components/Footer.astro";
 
-const jsonLd = [{
-  '@context':'https://schema.org',
-  '@type':'BreadcrumbList',
-  itemListElement:[
-    { '@type':'ListItem', position:1, name:'Services', item:'https://www.roostpm.com/services' },
-    { '@type':'ListItem', position:2, name:'Property Management', item:'https://www.roostpm.com/services/property-management' },
-  ],
-}];
+const title = "Property Management Services | Roost Property Management";
+const description = "Full-service property management across Anne Arundel County and nearby areas — fast leasing, clear communication, and diligent maintenance.";
+import Header from "/src/components/Header.astro";
 ---
-<Layout title="Property Management Services"
-        description="Full-service property management for Anne Arundel County and nearby Maryland areas."
-        {jsonLd}>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <Analytics />
+  </head>
+  <body>
+<Header />
 
-  <h1 class="text-2xl font-bold mb-4">Property Management</h1>
-  <p class="mb-6"><strong>Quick answer:</strong> We handle marketing, screening, leasing, rent collection, maintenance, and owner reporting.</p>
+    <main>
+      <section class="container" style="max-width:1080px; margin:0 auto; padding:1rem;">
+        <h1>Property Management Services</h1>
+        <p>{description}</p>
 
-  <section class="grid gap-6 md:grid-cols-3 mb-10">
-    <article class="p-4 rounded-lg border">
-      <h2 class="font-semibold mb-2">Marketing & Leasing</h2>
-      <ul class="list-disc pl-5">
-        <li>Pro photos + syndication</li>
-        <li>Showings & applications</li>
-        <li>Compliant leases</li>
-      </ul>
-    </article>
-    <article class="p-4 rounded-lg border">
-      <h2 class="font-semibold mb-2">Operations</h2>
-      <ul class="list-disc pl-5">
-        <li>Rent collection</li>
-        <li>24/7 maintenance</li>
-        <li>Vendor management</li>
-      </ul>
-    </article>
-    <article class="p-4 rounded-lg border">
-      <h2 class="font-semibold mb-2">Owner Experience</h2>
-      <ul class="list-disc pl-5">
-        <li>Monthly statements</li>
-        <li>Year-end tax docs</li>
-        <li>Transparent communication</li>
-      </ul>
-    </article>
-  </section>
+        <h2>What we handle</h2>
+        <ul>
+          <li>Pricing, marketing, and showings</li>
+          <li>Applicant screening & lease execution</li>
+          <li>Rent collection & owner statements</li>
+          <li>Maintenance coordination & inspections</li>
+          <li>Compliance with Anne Arundel County requirements</li>
+        </ul>
 
-  <a href="/service-areas/anne-arundel/annapolis" class="inline-block px-4 py-2 rounded-md bg-black text-white">
-    See Annapolis Service Details
-  </a>
+        <h2>Get started</h2>
+        <p>Have a rental in Severna Park, Glen Burnie, Pasadena, Annapolis, Millersville, or Odenton? Use the form below and we’ll follow up.</p>
+        <!-- Ensure your lead form posts to /api/lead -->
+      </section>
 
-  <ServiceLD
-    name="Property Management"
-    description="Full-service management for single-family, townhomes, and small multifamily in Anne Arundel County."
-    provider={{ name: 'Roost Property Management, LLC', url: 'https://www.roostpm.com' }} />
-</Layout>
+      <FairHousing />
+      <Footer />
+    </main>
+  </body>
+</html>

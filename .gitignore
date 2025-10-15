@@ -6,3 +6,10 @@ dist
 .env*
 .dev.vars
 wrangler.toml.local
+
+# OS / editor
+.DS_Store
+.idea/
+
+# Astro temp/backups
+*.astro.bak
