@@ -1,0 +1,69 @@
+---
+import Header from "../../../../components/Header.astro";
+import FairHousing from "../../../../components/FairHousing.astro";
+import Footer from "../../../../components/Footer.astro";
+
+const title = "Pasadena Property Management | Roost Property Management";
+const description = "Local Pasadena, MD property management: faster leasing, fewer surprises. See quick answers, pricing context, and FAQs.";
+---
+import NearbyAreas from "../../../../components/NearbyAreas.astro";
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <script type="application/ld+json" src="/org.json"></script>
+    <link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json" src="/breadcrumbs/anne-arundel/pasadena.json"></script>
+<meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url?.href || ""} />
+    <meta property="og:image" content="/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/logo.png" />
+    <link rel="canonical" href="/service-areas/anne-arundel/pasadena/" />
+    <script type="application/ld+json" src="/service-areas/anne-arundel/pasadena.faq.json"></script>
+  </head>
+  <body class="min-h-screen bg-white text-slate-900">
+    <Header />
+    <main class="mx-auto max-w-4xl px-6 py-12">
+      <h1 class="text-3xl font-semibold mb-6">Pasadena, MD Property Management</h1>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-3">Quick Answers</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Typical leasing time: 2–4 weeks for well-priced homes.</li>
+          <li>Average security deposit: One month’s rent (case-by-case).</li>
+          <li>Pet policy: Owner-approved; pet screening + monthly pet rent.</li>
+          <li>Service area coverage: All Pasadena ZIPs (21122) incl. Riviera Beach, Green Haven, Chesterfield.</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-3">Why owners choose Roost</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Transparent pricing and owner portal.</li>
+          <li>Compliance-first leasing and fair housing focus.</li>
+          <li>Local vendor network for faster turns.</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-3">Frequently Asked Questions</h2>
+        <p>See structured FAQs in the page head (FAQPage JSON-LD).</p>
+      </section>
+
+      <FairHousing />
+    
+    <NearbyAreas items={[{"name":"Glen Burnie","url":"/service-areas/anne-arundel/glen-burnie/"},{"name":"Severna Park","url":"/service-areas/anne-arundel/severna-park/"},{"name":"Annapolis","url":"/service-areas/anne-arundel/annapolis/"}]} />
+
+    <NearbyAreas items={[{"name":"Glen Burnie","url":"/service-areas/anne-arundel/glen-burnie/"},{"name":"Severna Park","url":"/service-areas/anne-arundel/severna-park/"},{"name":"Annapolis","url":"/service-areas/anne-arundel/annapolis/"}]} />
+</main>
+    <Footer />
+  </body>
+</html>

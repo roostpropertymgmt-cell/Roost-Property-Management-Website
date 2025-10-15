@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Roost PM Service Areas",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Anne Arundel County",
+      "url": "https://roost-property-management-website.pages.dev/service-areas/anne-arundel/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Severna Park",
+      "url": "https://roost-property-management-website.pages.dev/service-areas/anne-arundel/severna-park/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Glen Burnie",
+      "url": "https://roost-property-management-website.pages.dev/service-areas/anne-arundel/glen-burnie/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Pasadena",
+      "url": "https://roost-property-management-website.pages.dev/service-areas/anne-arundel/pasadena/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Howard County",
+      "url": "https://roost-property-management-website.pages.dev/service-areas/howard/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Columbia",
+      "url": "https://roost-property-management-website.pages.dev/service-areas/howard/columbia/"
+    }
+  ]
+}

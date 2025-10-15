@@ -1,0 +1,5 @@
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Service Areas","item":"https://roost-property-management-website.pages.dev/service-areas/"},
+{"@type":"ListItem","position":2,"name":"Howard County","item":"https://roost-property-management-website.pages.dev/service-areas/howard/"},
+{"@type":"ListItem","position":3,"name":"Columbia","item":"https://roost-property-management-website.pages.dev/service-areas/howard/columbia/"}
+]}

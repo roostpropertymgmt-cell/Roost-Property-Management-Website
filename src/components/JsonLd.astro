@@ -1,0 +1,6 @@
+---
+interface Props { data: any }
+const { data } = Astro.props;
+const json = JSON.stringify(data).replace(/</g, '\\u003c');
+---
+<script type="application/ld+json" data-test="jsonld-itemlist" set:html={json}></script>

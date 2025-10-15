@@ -1,0 +1,9 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How fast do Annapolis rentals lease?","acceptedAnswer":{"@type":"Answer","text":"Typically 3–5 weeks in historic districts; often faster elsewhere for well-priced homes."}},
+    {"@type":"Question","name":"What deposit do you require?","acceptedAnswer":{"@type":"Answer","text":"Usually one month’s rent, subject to screening and local rules."}},
+    {"@type":"Question","name":"Do you manage waterfront/HOA properties?","acceptedAnswer":{"@type":"Answer","text":"Yes. We review covenants, fees, and compliance requirements case-by-case."}}
+  ]
+}

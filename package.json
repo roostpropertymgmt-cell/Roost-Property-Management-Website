@@ -17,6 +17,9 @@
     "cf:dev": "wrangler pages dev .",
     "cf:deploy": "wrangler pages deploy .",
     "deploy": "wrangler pages deploy dist --project-name roost-property-management-website",
-    "doctor": "bash scripts/doctor.sh"
+    "doctor": "bash scripts/doctor.sh",
+    "deploy:prod": "wrangler pages deploy dist --project-name roost-property-management-website --branch main --commit-dirty=true",
+    "verify": "bash bin/verify.sh",
+    "ship": "npm run build && npm run deploy:prod && npm run verify"
   }
 }

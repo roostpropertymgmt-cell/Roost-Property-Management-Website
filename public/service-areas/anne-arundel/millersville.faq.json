@@ -1,0 +1,9 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How fast do Millersville rentals lease?","acceptedAnswer":{"@type":"Answer","text":"Often 2–4 weeks for updated homes, depending on price and season."}},
+    {"@type":"Question","name":"What deposit do you require?","acceptedAnswer":{"@type":"Answer","text":"Usually one month’s rent, based on screening results."}},
+    {"@type":"Question","name":"Any focus areas for Millersville?","acceptedAnswer":{"@type":"Answer","text":"Commuter-friendly locations for Ft. Meade, NSA, and BWI are in high demand."}}
+  ]
+}

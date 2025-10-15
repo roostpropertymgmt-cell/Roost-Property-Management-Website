@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can you lease a Pasadena rental?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most well-priced Pasadena homes lease in 2–4 weeks, depending on seasonality and condition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do you require for security deposits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typically one month’s rent, subject to screening results and local compliance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you allow pets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with owner approval, pet screening, and applicable pet rent; assistance animals handled per law."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which parts of Pasadena do you cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All of 21122 including Riviera Beach, Green Haven, Chesterfield, and nearby neighborhoods."
+      }
+    }
+  ]
+}

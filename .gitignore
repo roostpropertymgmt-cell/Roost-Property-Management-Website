@@ -1,15 +1,12 @@
 node_modules
 dist
-.vercel
-.netlify
+.tmp
 .DS_Store
-.env*
-.dev.vars
-wrangler.toml.local
-
-# OS / editor
-.DS_Store
-.idea/
-
-# Astro temp/backups
-*.astro.bak
+.env
+.env.*
+.wrangler
+.astro
+*.local
+*.log
+*.bak
+*_broken_*

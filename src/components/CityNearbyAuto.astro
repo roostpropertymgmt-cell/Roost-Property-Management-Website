@@ -1,0 +1,48 @@
+---
+import NearbyAreas from "./NearbyAreas.astro";
+const p = (Astro.url?.pathname || "").replace(/\/+$/,"");
+const parts = p.split("/").filter(Boolean); // ["service-areas","anne-arundel","severna-park"]
+let key = "";
+if (parts[0] === "service-areas" && parts.length >= 3) {
+  key = parts[1] + "/" + parts[2];
+}
+const map: Record<string, {name:string,url:string}[]> = {
+  "anne-arundel/severna-park": [
+    { name: "Pasadena", url: "/service-areas/anne-arundel/pasadena/" },
+    { name: "Annapolis", url: "/service-areas/anne-arundel/annapolis/" },
+    { name: "Millersville", url: "/service-areas/anne-arundel/millersville/" }
+  ],
+  "anne-arundel/glen-burnie": [
+    { name: "Pasadena", url: "/service-areas/anne-arundel/pasadena/" },
+    { name: "Severna Park", url: "/service-areas/anne-arundel/severna-park/" },
+    { name: "Odenton", url: "/service-areas/anne-arundel/odenton/" }
+  ],
+  "anne-arundel/pasadena": [
+    { name: "Glen Burnie", url: "/service-areas/anne-arundel/glen-burnie/" },
+    { name: "Severna Park", url: "/service-areas/anne-arundel/severna-park/" },
+    { name: "Annapolis", url: "/service-areas/anne-arundel/annapolis/" }
+  ],
+  "anne-arundel/annapolis": [
+    { name: "Severna Park", url: "/service-areas/anne-arundel/severna-park/" },
+    { name: "Pasadena", url: "/service-areas/anne-arundel/pasadena/" },
+    { name: "Millersville", url: "/service-areas/anne-arundel/millersville/" }
+  ],
+  "anne-arundel/millersville": [
+    { name: "Odenton", url: "/service-areas/anne-arundel/odenton/" },
+    { name: "Severna Park", url: "/service-areas/anne-arundel/severna-park/" },
+    { name: "Annapolis", url: "/service-areas/anne-arundel/annapolis/" }
+  ],
+  "anne-arundel/odenton": [
+    { name: "Millersville", url: "/service-areas/anne-arundel/millersville/" },
+    { name: "Severna Park", url: "/service-areas/anne-arundel/severna-park/" },
+    { name: "Glen Burnie", url: "/service-areas/anne-arundel/glen-burnie/" }
+  ],
+  "howard/columbia": [
+    { name: "Anne Arundel County", url: "/service-areas/anne-arundel/" },
+    { name: "Severna Park", url: "/service-areas/anne-arundel/severna-park/" },
+    { name: "Odenton", url: "/service-areas/anne-arundel/odenton/" }
+  ]
+};
+const items = map[key] || [];
+---
+{items.length ? <NearbyAreas items={items} /> : null}

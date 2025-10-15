@@ -1,0 +1,8 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Roost Property Management",
+  "url": "https://roost-property-management-website.pages.dev",
+  "logo": "https://roost-property-management-website.pages.dev/logo.png",
+  "sameAs": []
+}

@@ -1,0 +1,9 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How fast do Odenton rentals lease?","acceptedAnswer":{"@type":"Answer","text":"Many lease in 2–3 weeks near the MARC station and Fort Meade."}},
+    {"@type":"Question","name":"What deposit do you require?","acceptedAnswer":{"@type":"Answer","text":"Usually one month’s rent, screening dependent."}},
+    {"@type":"Question","name":"Do you support military relocations?","acceptedAnswer":{"@type":"Answer","text":"Yes. We regularly work with military tenants; BAH and orders are handled per policy."}}
+  ]
+}

@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://roost-property-management-website.pages.dev/</loc></url>
+  <url><loc>https://roost-property-management-website.pages.dev/</loc></url>
+  <url><loc>https://roost-property-management-website.pages.dev/services/property-management</loc></url>
   <url><loc>https://roost-property-management-website.pages.dev/services/property-management</loc></url>
   <url><loc>https://roost-property-management-website.pages.dev/service-areas/anne-arundel/annapolis</loc></url>
+  <url><loc>https://roost-property-management-website.pages.dev/service-areas/anne-arundel/annapolis</loc></url>
+  <url>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
+  <url>
+    <loc>https://roost-property-management-website.pages.dev/service-areas/howard/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://roost-property-management-website.pages.dev/service-areas/howard/columbia/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://roost-property-management-website.pages.dev/service-areas/anne-arundel/pasadena/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
+  <url>
+    <loc>https://roost-property-management-website.pages.dev/service-areas/howard/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://roost-property-management-website.pages.dev/service-areas/howard/columbia/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>

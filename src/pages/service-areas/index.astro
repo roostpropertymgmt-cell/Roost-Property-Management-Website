@@ -1,0 +1,56 @@
+---
+import Header from "../../components/Header.astro";
+import FairHousing from "../../components/FairHousing.astro";
+import Footer from "../../components/Footer.astro";
+
+const title = "Service Areas | Roost Property Management";
+const description = "Explore our Maryland service areas across Anne Arundel and Howard counties.";
+const items = [
+  { name: "Anne Arundel County", url: "/service-areas/anne-arundel/" },
+  { name: "Howard County", url: "/service-areas/howard/" },
+  { name: "Severna Park", url: "/service-areas/anne-arundel/severna-park/" },
+  { name: "Glen Burnie", url: "/service-areas/anne-arundel/glen-burnie/" },
+  { name: "Pasadena", url: "/service-areas/anne-arundel/pasadena/" },
+  { name: "Annapolis", url: "/service-areas/anne-arundel/annapolis/" },
+  { name: "Millersville", url: "/service-areas/anne-arundel/millersville/" },
+  { name: "Odenton", url: "/service-areas/anne-arundel/odenton/" },
+  { name: "Columbia", url: "/service-areas/howard/columbia/" }
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <script type="application/ld+json" src="/org.json"></script>
+    <link rel="manifest" href="/site.webmanifest">
+<meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url?.href || ""} />
+    <meta property="og:image" content="/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/logo.png" />
+    <link rel="canonical" href="/service-areas/" />
+    <script type="application/ld+json" src="/service-areas.itemlist.json"></script>
+  </head>
+  <body class="min-h-screen bg-white text-slate-900">
+    <Header />
+    <main class="mx-auto max-w-4xl px-6 py-12">
+      <h1 class="text-3xl font-semibold mb-6">Service Areas</h1>
+      <p class="mb-8 text-lg">Choose a location to see local info, quick answers, and FAQs.</p>
+      <ul class="grid gap-4 sm:grid-cols-2" data-test="service-areas-list">
+        {items.map((it) => (
+          <li class="border rounded-xl p-4 hover:shadow-sm transition">
+            <a class="text-blue-700 hover:underline" href={it.url}>{it.name}</a>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-10"><FairHousing /></div>
+    </main>
+    <Footer />
+  </body>
+</html>

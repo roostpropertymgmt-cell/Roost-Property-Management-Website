@@ -1,0 +1,5 @@
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Service Areas","item":"https://roost-property-management-website.pages.dev/service-areas/"},
+{"@type":"ListItem","position":2,"name":"Anne Arundel County","item":"https://roost-property-management-website.pages.dev/service-areas/anne-arundel/"},
+{"@type":"ListItem","position":3,"name":"Pasadena","item":"https://roost-property-management-website.pages.dev/service-areas/anne-arundel/pasadena/"}
+]}

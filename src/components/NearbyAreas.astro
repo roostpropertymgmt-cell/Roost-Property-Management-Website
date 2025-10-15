@@ -1,0 +1,11 @@
+---
+const { items = [] } = Astro.props;
+---
+<section class="mt-12">
+  <h2 class="text-xl font-semibold mb-3">Nearby Areas</h2>
+  <ul class="flex flex-wrap gap-3">
+    {items.map((it) => (
+      <li><a class="inline-block rounded-lg border px-3 py-1 hover:bg-slate-50" href={it.url}>{it.name}</a></li>
+    ))}
+  </ul>
+</section>

@@ -56,12 +56,26 @@ const breadcrumbs = {
 };
 import Header from "/src/components/Header.astro";
 ---
+import NearbyAreas from "../../../../components/NearbyAreas.astro";
+
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
-    <meta name="description" content={description} />
+    <script type="application/ld+json" src="/org.json"></script>
+    <link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json" src="/breadcrumbs/anne-arundel/severna-park.json"></script>
+<meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url?.href || ""} />
+    <meta property="og:image" content="/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/logo.png" />
     <script type="application/ld+json" set:html={JSON.stringify(quickFaqJsonLd)}></script>
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}></script>
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
@@ -100,6 +114,10 @@ import Header from "/src/components/Header.astro";
 
       <FairHousing />
       <Footer />
-    </main>
+    
+    <NearbyAreas items={[{"name":"Pasadena","url":"/service-areas/anne-arundel/pasadena/"},{"name":"Annapolis","url":"/service-areas/anne-arundel/annapolis/"},{"name":"Millersville","url":"/service-areas/anne-arundel/millersville/"}]} />
+
+    <NearbyAreas items={[{"name":"Pasadena","url":"/service-areas/anne-arundel/pasadena/"},{"name":"Annapolis","url":"/service-areas/anne-arundel/annapolis/"},{"name":"Millersville","url":"/service-areas/anne-arundel/millersville/"}]} />
+</main>
   </body>
 </html>
